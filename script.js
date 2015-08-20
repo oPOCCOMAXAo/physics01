@@ -17,7 +17,7 @@ var count = 50; // начальное количество объектов
 var HEIGHT = window.innerHeight, WIDTH = window.innerWidth;
 var timer;
 
-var G = 1;
+var G = 1; // задаём константу методом подбора
 
 function main(){
     // создаём холст на весь экран и прикрепляем его на страницу
