@@ -60,12 +60,12 @@ function Step(){
         for(var j = 0; j < star.length; j++) // считаем второй
         {
             if(i == j) continue;
-            dx = star[i].x - star[j].x;
-            dy = star[i].y - star[j].y;
+            dx = star[j].x - star[i].x;
+            dy = star[j].y - star[i].y;
             
             r = dx * dx + dy * dy;// тут R^2
             if(r < 0.1) r = 0.1; // избегаем деления на очень маленькое число
-            a = -G * star[j].m / r;
+            a = G * star[j].m / r;
             
             r = Math.sqrt(r); // тут R
             ax = a * dx / r; // a * cos
