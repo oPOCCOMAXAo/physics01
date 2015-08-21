@@ -40,7 +40,7 @@ function main(){
     }
     
     // запуск таймер, ваш кэп ;-)
-    timer = setInterval(Step, 20);
+    timer = setInterval(Step, dt * 1000);
 }
 
 function Star(){
