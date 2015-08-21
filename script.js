@@ -9,7 +9,6 @@ function onmouseup(/*MouseEvent*/ e){
     aStar.y = e.clientY;
     star.push(aStar);
     document.title = star.length;
-    console.log(e);
 }
 
 var star = new Array(); // в этом массиве будут храниться все объекты
