@@ -16,7 +16,7 @@ var count = 50; // начальное количество объектов
 var HEIGHT = window.innerHeight, WIDTH = window.innerWidth;
 var timer;
 
-var G = 1; // задаём константу методом подбора
+var G = 100; // задаём константу методом подбора
 var dt = 0.02; // шаг вычисления
 
 function main(){
