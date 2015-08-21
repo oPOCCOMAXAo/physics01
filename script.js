@@ -1,16 +1,6 @@
 var canvas, context;
 
 document.addEventListener("DOMContentLoaded", main, true);
-document.addEventListener("mouseup", onmouseup, true);
-
-function onmouseup(/*MouseEvent*/ e){
-    var aStar = new Star();
-    aStar.x = e.clientX;
-    aStar.y = e.clientY;
-    star.push(aStar);
-    document.title = star.length;
-    console.log(e);
-}
 
 var star = new Array(); // в этом массиве будут храниться все объекты
 var count = 50; // начальное количество объектов
@@ -18,6 +8,7 @@ var HEIGHT = window.innerHeight, WIDTH = window.innerWidth;
 var timer;
 
 var G = 1; // задаём константу методом подбора
+var dt = 0.02; // шаг вычисления
 
 function main(){
     // создаём холст на весь экран и прикрепляем его на страницу
@@ -71,13 +62,13 @@ function Step(){
             ax = a * dx / r; // a * cos
             ay = a * dy / r; // a * sin
             
-            star[i].vx += ax;
-            star[i].vy += ay;
+            star[i].vx += ax * dt;
+            star[i].vy += ay * dt;
         }
     // координаты меняем позже, потому что они влияют на вычисление ускорения
     for(var i = 0; i < star.length; i++){
-        star[i].x += star[i].vx;
-        star[i].y += star[i].vy;
+        star[i].x += star[i].vx * dt;
+        star[i].y += star[i].vy * dt;
     }
     
     // выводим на экран
