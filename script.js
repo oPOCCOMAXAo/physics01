@@ -1,6 +1,16 @@
 var canvas, context;
 
 document.addEventListener("DOMContentLoaded", main, true);
+document.addEventListener("mouseup", onmouseup, true);
+
+function onmouseup(/*MouseEvent*/ e){
+    var aStar = new Star();
+    aStar.x = e.clientX;
+    aStar.y = e.clientY;
+    star.push(aStar);
+    document.title = star.length;
+    console.log(e);
+}
 
 var star = new Array(); // в этом массиве будут храниться все объекты
 var count = 50; // начальное количество объектов
